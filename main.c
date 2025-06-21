@@ -88,8 +88,7 @@ int menuRelatorios() {
     printf("\n=== RELATORIOS ===\n");
     printf("1. Ver Relatorios\n");
     printf("2. Adicionar Relatorio\n");
-    printf("3. Remover Exercicio\n");
-    printf("4. Voltar\n");
+    printf("3. Voltar\n");
     printf("=====================\n");
     printf("Escolha uma opcao: ");
     scanf("%d", &opcaoRelatorio);
@@ -97,15 +96,12 @@ int menuRelatorios() {
     switch (opcaoRelatorio)
     {
     case 1:
-        //função
+        verRelatorios();
         break;
     case 2:
         criarRelatorio();
         break;
     case 3:
-        //funcao
-        break;
-    case 4:
         return 0;
         break;
     default:
@@ -182,9 +178,27 @@ char verRelatorios() {
     FILE *arquivo;
 
     arquivo = fopen(CAMINHO_ARQUIVO_RELATORIOS, "r");
-    char linha[256];
+
+    if (!arquivo) {
+        printf("Nao foi possível abrir o arquivo de dados!");
+        return NULL;
+    }
+
+    char linha[256], data[12], nome[101], peso[10], series[20];
 
     while (fgets(linha, sizeof(linha), arquivo)) {
+        if (strcmp(linha, "[RELATORIO]\n") == 0) {
+            
+            printf("=====================\n");
 
+            fgets(linha, sizeof(linha), arquivo);
+            sscanf(linha, "DATA=%s\n", data);
+            printf("Relatorio do dia: %s\n", data);
+            
+            if (strncmp("EXERCICIO=", fgets(linha, sizeof(linha), arquivo), 10) == 0) {
+                sscanf(linha+10, "%[^;];%[^;];%[^\n];", nome, peso, series);
+                printf("Nome do exercicio: %s\nSeries Totais: %s\nPeso: %s\n", nome, series, peso);
+            }
+        }        
     }
 }
