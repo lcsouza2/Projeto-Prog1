@@ -4,16 +4,10 @@
 
 
 typedef struct {
-    char nome[50][20];
-    char musculo[50][20];
-    char aparelho[50][20];
+    char nome[50];
+    char musculo[50];
+    char aparelho[50];
 } Exercicio;
-
-typedef struct {
-    char nomeesc[50][20];
-    char musculoesc[50][20];
-    char aparelhoesc[50][20];
-} Criar;
 
 int main() {
     int opcao;
@@ -66,9 +60,9 @@ int main() {
     return 0;
 }
 
-char nomeesc[50][20];
-char musculoesc[50][20];
-char aparelhoesc[50][20];
+char nomeesc[50];
+char musculoesc[50];
+char aparelhoesc[50];
 
 int criarExercicios(Criar exercicio) {
     printf("\n-Qual o nome do exercicio?\n");
