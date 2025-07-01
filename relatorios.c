@@ -15,11 +15,13 @@ void menuRelatorios() {
     int opcaoRelatorio;
     do {
         limpar_tela();
-        printf("\n=== RELATORIOS ===\n");
-        printf("1. Ver Relatorios\n");
-        printf("2. Adicionar Relatorio\n");
-        printf("3. Voltar\n");
-        printf("=====================\n");
+        printf("=======================================");
+        printf("\n      \\\\\\ Relatorio ///\n");
+        printf("=======================================");
+        printf("      1. Ver Relatorios\n");
+        printf("      2. Adicionar Relatorio\n");
+        printf("      3. Voltar\n");
+        printf("=======================================");
         printf("Escolha uma opcao: ");
         scanf("%d", &opcaoRelatorio);
 
@@ -47,12 +49,13 @@ void criarRelatorio() {
 
     arquivo = fopen(CAMINHO_ARQUIVO_RELATORIOS, "a");
     if (!arquivo) {
+        printf("=======================================\n");
         printf("Nao foi possível abrir o arquivo de dados!\n");
         pausar();
         return;
     }
 
-    printf("=====================\n");
+    printf("=======================================\n");
     printf("Digite a data do relatório ou 'cancelar' para voltar ao menu: ");
     scanf("%s", dataRelatorio);
 
@@ -66,7 +69,8 @@ void criarRelatorio() {
 
     while (1) {
         struct ExercicioRelatorio exercicioTemp;
-
+        
+        printf("=======================================\n");
         printf("Adicione um exercicio ou digite 'sair' para encerrar o relatorio!\n");
 
         printf("Digite o nome do exercicio: ");
@@ -85,7 +89,7 @@ void criarRelatorio() {
         strcpy(exercicioTemp.series, temp);
 
         fprintf(arquivo, "EXERCICIO=%s;%s;%s\n", exercicioTemp.nome, exercicioTemp.peso, exercicioTemp.series);
-        printf("=====================\n");
+        printf("=======================================");
     }
 
     fprintf(arquivo, "[/RELATORIO]\n\n");
@@ -109,7 +113,7 @@ void verRelatorios() {
     while (fgets(linha, sizeof(linha), arquivo)) {
         if (strcmp(linha, "[RELATORIO]\n") == 0) {
             encontrou = 1;
-            printf("=====================\n");
+            printf("=======================================");
             fgets(linha, sizeof(linha), arquivo);
             sscanf(linha, "DATA=%s\n", data);
             printf("Relatorio do dia: %s\n", data);
