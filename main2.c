@@ -7,11 +7,8 @@
 #include "exercicios.h"
 #include "relatorios.h"
 
-char nome[16];
-
 // Declaração das funções
 void limparTela();
-void pausar();
 int menuPrincipal();
 
 // Implementação das funções
