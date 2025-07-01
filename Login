@@ -43,7 +43,7 @@ void criar_conta()
     printf("*O número máximo de caracteres para uma\nsenha é 15*\n");
     printf("=======================================\n\n");
 
-    printf("            Nome: ");
+    printf("        Nome: ");
     fgets(nome, sizeof(nome), stdin);
 
     nome[strcspn(nome, "\n")] = 0;
@@ -55,7 +55,7 @@ void criar_conta()
     }
     else
     {
-      printf("            Senha: ");
+      printf("        Senha: ");
       fgets(senha, sizeof(senha), stdin);
 
       senha[strcspn(senha, "\n")] = 0;
@@ -72,7 +72,7 @@ void criar_conta()
         fclose(conta);
 
         printf("\n=======================================\n\n");
-        printf("Sua conta foi criada com sucesso!");
+        printf("Sua conta foi criada com sucesso!\n\n");
 
         voltar = 1;
 
@@ -102,11 +102,11 @@ char *entrar(char nc[41], char sc[16])
     else
     {
       printf("========================================\n");
-      printf("             \\\\\\ Entrar /// \n");
+      printf("            \\\\\\ Entrar /// \n");
       printf("========================================\n");
       printf("*Para sair digite 0 em nome ou senha*\n");
       printf("========================================\n\n");
-      printf("            Nome: ");
+      printf("        Nome: ");
       scanf("%[^\n]s", nc);
 
       getchar();
@@ -121,7 +121,7 @@ char *entrar(char nc[41], char sc[16])
       }
       else
       {
-        printf("            Senha: ");
+        printf("        Senha: ");
         scanf("%s", sc);
 
         getchar();
