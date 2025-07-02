@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1751367224 source:c:\users\eu\desktop\prog1\login.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	"utils.h"
+	"menus.h"
+
+1751367365 source:c:\users\eu\desktop\prog1\relatorios.c
+	<stdio.h>
+	"utils.h"
+	<stdlib.h>
+	<string.h>
+	"menus.h"
+
+1751337380 source:c:\users\eu\desktop\prog1\utils.c
+	<stdlib.h>
+	<stdio.h>
+
+1751364774 source:c:\users\eu\desktop\prog1\exercicios.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"utils.h"
+	"menus.h"
+
+1751337460 c:\users\eu\desktop\prog1\utils.h
+
+1751367282 source:c:\users\eu\desktop\prog1\menus.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utils.h"
+
+1751363622 c:\users\eu\desktop\prog1\menus.h
+
+1751367519 source:c:\users\eu\desktop\prog1\main.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	<locale.h>
+	<windows.h>
+	"login.h"
+	"menus.h"
+	"exercicios.h"
+	"relatorios.h"
+
+1751361170 c:\users\eu\desktop\prog1\login.h
+
+1751363864 c:\users\eu\desktop\prog1\exercicios.h
+
+1751363681 c:\users\eu\desktop\prog1\relatorios.h
+
